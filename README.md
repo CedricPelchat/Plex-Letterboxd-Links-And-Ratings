@@ -20,7 +20,7 @@ Once installed, the script runs automatically on Plex web pages (`https://app.pl
 - Extracts the film's title, release year, and director's name from Plex.
 - Constructs a query to search for the film on Letterboxd.
 - Fetches the film's rating from Letterboxd and integrates it into the Plex page.
-- Adds a Letterboxd icon that links to the film's Letterboxd page for more details.
+- Adds a Letterboxd icon that links to the film's Letterboxd page.
 
 ## Configuration
 No additional configuration is required after installation. The script operates with the default settings optimized for general use.
