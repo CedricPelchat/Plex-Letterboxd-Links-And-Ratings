@@ -33,7 +33,7 @@ No additional configuration is required after installation. The script operates 
 - **Duplicate Titles**: Films with identical titles and release years can result in incorrect matches.
 
 ## Contributions
-This script is open for contributions and improvements. If you encounter an issue or have suggestions, please feel free to contribute to the repository or contact the author.
+This script is open for contributions and improvements. If you encounter an issue or have suggestions, please feel free to contribute to the repository or contact me.
 
 
 
