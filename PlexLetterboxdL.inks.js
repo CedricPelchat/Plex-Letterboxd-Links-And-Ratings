@@ -13,7 +13,6 @@
 // @updateURL    https://update.greasyfork.org/scripts/483420/Plex%20Letterboxd%20links.meta.js
 // @require      file://C://Github\Tampermonkey\PlexLetterboxdL.inks.js
 // ==/UserScript==
-
 //TODO: Account for alternative titles in letterboxd. It should look in those if the plex title is included.
 //Edge cases:
 //Unstoppable Family : has an alternative title on Letterboxd
@@ -424,40 +423,46 @@
         var lastProcessedTitle, lastProcessedYear, lastProcessedDirector;
 
     
+        let debounceTimeout = null;
+
         function observerCallback(mutationsList, observer) {
-            if (checkForPageChange()) {
-                setTimeout(() => {
-                    observerCallback(mutationsList, observer);
-                }, 300);
-                return;
-            }
+            clearTimeout(debounceTimeout);
+        
+            debounceTimeout = setTimeout(() => {
+                if (checkForPageChange()) {
+                    return;
+                }
+        
                 const isAlbumPage = document.querySelector('[class^="AlbumDisc"]');
                 const isFullSeries = document.querySelector('[title*="Season 4"], [title*="Season 5"], [title*="Season 6"]');
-    
+        
                 if (isAlbumPage || isFullSeries) {
                     return;
                 }
+        
                 extractTitleAndYear();
                 extractDirectorFromPage();
-    
-                if (lastTitle !== lastProcessedTitle || lastYear !== lastProcessedYear || lastDirector !== lastProcessedDirector ) {
+        
+                if (lastTitle !== lastProcessedTitle || lastYear !== lastProcessedYear || lastDirector !== lastProcessedDirector) {
                     lastProcessedTitle = lastTitle;
                     lastProcessedYear = lastYear;
                     lastProcessedDirector = lastDirector;
-    
+        
                     if (lastTitle && lastYear) {
                         buildLetterboxdUrl(lastTitle, lastYear).then(url => {
-                            if (!url){
+                            if (!url) {
                                 return;
                             }
                             processLetterboxdUrl(url, lastYear, lastDirector);
-    
+        
                         }).catch(error => {
                             console.error('Error building Letterboxd URL:', error);
                         });
                     }
                 }
+            }, 300);
         }
+        
 
     const observer = new MutationObserver(observerCallback);
     observer.observe(document.body, {
