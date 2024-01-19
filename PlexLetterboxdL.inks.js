@@ -8,10 +8,10 @@
 // @license 	 MIT
 // @grant        GM_xmlhttpRequest
 // @connect      letterboxd.com
-// @version 	 2.10.4
+// @version 	 2.10.5
 // @downloadURL  https://update.greasyfork.org/scripts/483420/Plex%20Letterboxd%20links.user.js
 // @updateURL    https://update.greasyfork.org/scripts/483420/Plex%20Letterboxd%20links.meta.js
-// @require      file://C://Github\Tampermonkey\PlexLetterboxdL.inks.js
+
 // ==/UserScript==
 //TODO: Account for alternative titles in letterboxd. It should look in those if the plex title is included.
 //Edge cases:
