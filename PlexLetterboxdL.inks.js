@@ -1,3 +1,19 @@
+// ==UserScript==
+// @name         Plex Letterboxd link and rating
+// @namespace    http://tampermonkey.net/
+// @description  Add Letterboxd link and rating to its corresponding Plex film's page
+// @author       CarnivalHipster
+// @match        https://app.plex.tv/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=letterboxd.com
+// @license 	 MIT
+// @grant        GM_xmlhttpRequest
+// @connect      letterboxd.com
+// @version 	 2.10.4
+// @downloadURL  https://update.greasyfork.org/scripts/483420/Plex%20Letterboxd%20links.user.js
+// @updateURL    https://update.greasyfork.org/scripts/483420/Plex%20Letterboxd%20links.meta.js
+// @require      file://C://Github\Tampermonkey\PlexLetterboxdL.inks.js
+// ==/UserScript==
+
 //TODO: Account for alternative titles in letterboxd. It should look in those if the plex title is included.
 //Edge cases:
 //Unstoppable Family : has an alternative title on Letterboxd
