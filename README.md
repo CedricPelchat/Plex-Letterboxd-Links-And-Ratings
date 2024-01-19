@@ -1,4 +1,4 @@
-# Plex Letterboxd Link and Rating
+# Plex Enhanced: Letterboxd Ratings and Links Integration
 
 ## Overview
 The Plex Letterboxd Link and Rating script is a Tampermonkey userscript that enhances the experience of Plex users by integrating Letterboxd ratings and links into the Plex film's page. This script fetches ratings and additional metadata from Letterboxd and displays them on Plex, providing a richer and more informative browsing experience for movie enthusiasts.  It handles 99% of films correctly, so you might not encounter any problems.
